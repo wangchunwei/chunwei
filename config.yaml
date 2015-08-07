@@ -1,2 +1,5 @@
 handle:
-  - rewrite:if (!is_file() && !is_dir() && path ~ "^/(.*)") goto "index.php/$1"
+	- rewrite:  if ( path ~ "sitemap.xml" ) goto "wp-content/plugins/baidu-sitemap-generator/SAE_xml.php"
+	- rewrite:  if ( path ~ "sitemap.html" ) goto "wp-content/plugins/baidu-sitemap-generator/SAE_html.php"
+- rewrite:if (!is_file() && !is_dir() && path ~ "^/(.*)") goto "index.php/$1"
+  
